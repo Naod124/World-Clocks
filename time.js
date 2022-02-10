@@ -26,124 +26,265 @@ let kampala = false;
 let sydney = false; 
 let athen = false; 
 
+function options() {
 
-var digitalTime = function () {
   $(document).ready(function() {
-      $("#cities").change(function () {    
-        if($(this).val()==3){
-          london = true; 
-       }
-       else{
-        london = false; 
-       }
-       if($(this).val()==1){
-        asmara = true; 
+    $("#cities").change(function () {    
+      if($(this).val()==3){
+        london = true; 
      }
      else{
-      asmara = false; 
+      london = false; 
      }
-      if($(this).val()==2){
-      stockholm = true; 
+     if($(this).val()==1){
+      asmara = true; 
    }
    else{
-    stockholm = false; 
+    asmara = false; 
    }
-    if($(this).val()==4){
-    oslo = true; 
+    if($(this).val()==2){
+    stockholm = true; 
  }
  else{
-   oslo = false; 
+  stockholm = false; 
  }
-  if($(this).val()==5){
-  newyork = true; 
+  if($(this).val()==4){
+  oslo = true; 
 }
-else if($(this).val()==6){
-  sanfransisco = true; 
+else{
+ oslo = false; 
 }
-else if($(this).val()==7){
-  moskva = true; 
+if($(this).val()==5){
+newyork = true; 
 }
-else if($(this).val()==8){
-  baghdad = true; 
+else{
+newyork = false; 
 }
-else if($(this).val()==9){
-  instanbul = true; 
+if($(this).val()==6){
+sanfransisco = true; 
 }
-else if($(this).val()==10){
-  athen = true; 
+else{
+sanfransisco = false; 
+}
+if($(this).val()==7){
+moskva = true; 
+}
+else{
+moskva = false; 
+}
+if($(this).val()==8){
+baghdad = true; 
+}
+else{
+baghdad = false; 
+}
+if($(this).val()==9){
+instanbul = true; 
+}
+else{
+instanbul = false; 
+}
+if($(this).val()==10){
+athen = true; 
+}
+else{
+athen = false ; 
+}
+if($(this).val()==11){
+madrid = true; 
+}
+else {
+madrid = false; 
 }
 
-else if($(this).val()==11){
-  madrid = true; 
+if($(this).val()==12){
+berlin = true; 
+}
+else{
+berlin = false; 
 }
 
-else if($(this).val()==12){
-  berlin = true; 
+if($(this).val()==13){
+nairobi = true; 
 }
-
-else if($(this).val()==13){
-  nairobi = true; 
+else{
+nairobi = false; 
 }
-else if($(this).val()==14){
-  Mogadishu = true; 
+if($(this).val()==14){
+Mogadishu = true; 
 }
-else if($(this).val()==15){
-  addis = true; 
+else{
+Mogadishu = false; 
 }
-else if($(this).val()==16){
-  Dubai = true; 
+if($(this).val()==15){
+addis = true; 
 }
-else if($(this).val()==17){
-  kampala = true; 
+else{
+addis = false ;
 }
-else if($(this).val()==18){
-  khartoum = true; 
+if($(this).val()==16){
+Dubai = true; 
 }
-else if($(this).val()==19){
-  kairo = true; 
+else{
+Dubai = false; 
 }
-else if($(this).val()==20){
-  sydney = true; 
+if($(this).val()==17){
+kampala = true; 
 }
-       
-      });
-      if(london==true){
-        $("#digital").html(new Date().toLocaleTimeString("en-US", {
-          timeZone: 'Europe/London',
-          timeStyle: 'medium', hourCycle: 'h23'
-        })
-        ); 
-
-      }
-     else  if(stockholm==true){
-        $("#digital").html(new Date().toLocaleTimeString("en-US", {
-          timeZone: 'Europe/Stockholm',
-          timeStyle: 'medium', hourCycle: 'h23'
-        })
-        ); 
-      }
+else{
+kampala = false; 
+}
+if($(this).val()==18){
+khartoum = true; 
+}
+else{
+khartoum = false; 
+}
+if($(this).val()==19){
+kairo = true; 
+}
+else{
+kairo = false; 
+}
+if($(this).val()==20){
+sydney = true; 
+}
+else{
+sydney = false; 
+}
+    }); 
+  }); 
+  }
+function digitalTime() {
+  $(document).ready(function () {
+    options(); 
+    
+    if(london==true){
+      $("#digital").html(new Date().toLocaleTimeString("en-US", {
+        timeZone: 'Europe/London',
+        timeStyle: 'medium', hourCycle: 'h23'
+    })); 
+  }
+    
+    else  if(stockholm==true){
+      $("#digital").html(new Date().toLocaleTimeString("en-US", {
+        timeZone: 'Europe/Stockholm',
+        timeStyle: 'medium', hourCycle: 'h23'
+      })); 
+    }
     else  if(oslo==true){
-        $("#digital").html(new Date().toLocaleTimeString("en-US", {
-          timeZone: 'Europe/Oslo',
+      $("#digital").html(new Date().toLocaleTimeString("en-US", {
+        timeZone: 'Europe/Oslo',
+        timeStyle: 'medium', hourCycle: 'h23'
+      })); 
+    }
+     else if(asmara==true){
+      $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Asmara',
           timeStyle: 'medium', hourCycle: 'h23'
-        })
-        ); 
+        })); 
       }
-       else if(asmara==true){
-          $("#digital").html(new Date().toLocaleTimeString("en-US", {
-            timeZone: 'Africa/Asmara',
-            timeStyle: 'medium', hourCycle: 'h23'
-          })
-          ); 
-        }
-       else if(newyork==true){
-          $("#digital").html(new Date().toLocaleTimeString("en-US", {
-            timeZone: 'America/New_york',
-            timeStyle: 'medium', hourCycle: 'h23'
-          })
-          ); 
-        }
-         });
+     else if(newyork==true){
+      $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'America/New_york',
+          timeStyle: 'medium', hourCycle: 'h23'
+        })); 
+      }
+      else if(sanfransisco==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'America/Los_angeles',
+          timeStyle: 'medium', hourCycle: 'h23'
+        })); 
+      }
+      
+      else if(moskva==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Europe/Moscow',
+          timeStyle: 'medium', hourCycle: 'h23'
+        })); 
+      }
+    
+      else if(baghdad==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Asia/Baghdad',
+          timeStyle: 'medium', hourCycle: 'h23'
+        })); 
+      }
+      else if(instanbul==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Europe/Instanbul',
+          timeStyle: 'medium', hourCycle: 'h23'
+        })); 
+      }
+      else if(athen==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Europe/Athens',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+      else if(madrid==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Europe/Madrid',
+          timeStyle: 'medium', hourCycle: 'h23'
+        })); 
+      }
+      else if(berlin==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Europe/Berlin',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+      else if(nairobi==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Nairobi',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+    
+      else if(Mogadishu==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Mogadishu',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+      else if(addis==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Addis_ababa',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+    
+      else if(Dubai==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Asia/Dubai',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+      else if(kampala==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Kampala',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+      else if(khartoum==true){
+        $("#digital").html(new Date()).toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Khartoum',
+          timeStyle: 'medium', hourCycle: 'h23'
+        });
+      }
+      else if(kairo==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Africa/Cairo',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+      else if(sydney==true){
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
+          timeZone: 'Australia/Sydney',
+          timeStyle: 'medium', hourCycle: 'h23'
+        }));
+      }
+  });
 }
 
 digitalTime(); 
@@ -167,6 +308,8 @@ function newFunction() {
 }
 
 function faceAndNumber({ ctx, radius }) {
+
+
   let grad;
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2 * Math.PI);
@@ -202,17 +345,171 @@ function faceAndNumber({ ctx, radius }) {
 
 
 function drawTime({ ctx, radius }) {
+  $(document).ready(function() {
+    options(); 
+if(london==true){
+  date = (new Date()).toLocaleTimeString("en-US", {
+    timeZone: 'Europe/London',
+    timeStyle: 'medium', hourCycle: 'h23'
+}).split(" ")[0].split(":"); 
+  calcuation(); 
 
+}
+else  if(stockholm==true){
+  date = (new Date()).toLocaleTimeString("en-US", {
+    timeZone: 'Europe/Stockholm',
+    timeStyle: 'medium', hourCycle: 'h23'
+  }).split(" ")[0].split(":"); 
+  calcuation(); 
+}
+else  if(oslo==true){
+  date = (new Date()).toLocaleTimeString("en-US", {
+    timeZone: 'Europe/Oslo',
+    timeStyle: 'medium', hourCycle: 'h23'
+  }).split(" ")[0].split(":"); 
+  calcuation(); 
+}
+ else if(asmara==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Asmara',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+  calcuation(); 
+  }
+ else if(newyork==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'America/New_york',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(sanfransisco==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'America/Los_angeles',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  
+  else if(moskva==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Europe/Moscow',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+
+  else if(baghdad==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Asia/Baghdad',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(instanbul==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Europe/Instanbul',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(athen==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Europe/Athens',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(madrid==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Europe/Madrid',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(berlin==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Europe/Berlin',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(nairobi==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Nairobi',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+
+  else if(Mogadishu==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Mogadishu',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(addis==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Addis_ababa',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+
+  else if(Dubai==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Asia/Dubai',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(kampala==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Kampala',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(khartoum==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Khartoum',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(kairo==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Africa/Cairo',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+  else if(sydney==true){
+    date = (new Date()).toLocaleTimeString("en-US", {
+      timeZone: 'Australia/Sydney',
+      timeStyle: 'medium', hourCycle: 'h23'
+    }).split(" ")[0].split(":"); 
+     calcuation();
+  }
+});
+}
+
+function calcuation(){
   let now = new Date();
-  let hour = now.getHours();
+  //let hour = now.getHours();
   let minute = now.getMinutes();
   let second = now.getSeconds();
   //hour
-  hour = hour % 12;
-  hour = (hour * Math.PI / 6) +
+
+  //hour = hour % 12;
+  date[0];
+
+  date[0] = date[0] % 12;
+  date[0] = (date[0] * Math.PI / 6) +
     (minute * Math.PI / (6 * 60)) +
     (second * Math.PI / (360 * 60));
-  drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+  drawHand(ctx, date[0], radius * 0.5, radius * 0.07);
   //minute
   minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
   drawHand(ctx, minute, radius * 0.8, radius * 0.07);
@@ -222,6 +519,7 @@ function drawTime({ ctx, radius }) {
 
   // draw the hand
   drawHand(ctx, second, radius * 0.9, radius * 0.02);
+
 }
 
 
