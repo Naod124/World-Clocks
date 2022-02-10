@@ -212,7 +212,7 @@ function digitalTime() {
       }
       else if(instanbul==true){
         $("#digital").html(new Date().toLocaleTimeString("en-US", {
-          timeZone: 'Europe/Instanbul',
+          timeZone: 'Europe/Istanbul',
           timeStyle: 'medium', hourCycle: 'h23'
         })); 
       }
@@ -267,10 +267,10 @@ function digitalTime() {
         }));
       }
       else if(khartoum==true){
-        $("#digital").html(new Date()).toLocaleTimeString("en-US", {
+        $("#digital").html(new Date().toLocaleTimeString("en-US", {
           timeZone: 'Africa/Khartoum',
           timeStyle: 'medium', hourCycle: 'h23'
-        });
+        }));
       }
       else if(kairo==true){
         $("#digital").html(new Date().toLocaleTimeString("en-US", {
@@ -408,7 +408,7 @@ else  if(oslo==true){
   }
   else if(instanbul==true){
     date = (new Date()).toLocaleTimeString("en-US", {
-      timeZone: 'Europe/Instanbul',
+      timeZone: 'Europe/Istanbul',
       timeStyle: 'medium', hourCycle: 'h23'
     }).split(" ")[0].split(":"); 
      calcuation();
